@@ -1,0 +1,26 @@
+<!--pages/talent/talent.wxml-->
+<view class="talent-container">
+  <view class="header">认识天赋</view>
+  
+  <view class="about-us">关于我们</view>
+  
+  <view class="description">
+    <text>欢迎来到我们的天赋测评软件，我们专注于结合玄学和八卦理论，为用户提供个性化的天赋评估服务。通过深入研究古老的八卦哲学和玄学原理，我们的算法能够解读用户的天赋、潜能和个性特征，为他们的人生发展道路提供有力的指引。</text>
+    
+    <text>我们的团队由玄学专家、心理学家和技术人员组成，致力于将传统智慧与现代科技相结合。为用户打造科学、准确、可靠的天赋测评工具。我们深信每个人都有独特的天赋和使命，而我们的软件旨在帮助用户发现和实现他们的潜能，成就更加充实、有意义的人生。</text>
+    
+    <text>无论您是对玄学和八卦感兴趣的爱好者，还是寻找个人发展指导的专业人士，我们都希望能够为您提供有价值的信息和支持。感谢您选择我们的软件，让我们一起探索您的天赋，开启更加充满活力的生活之旅！</text>
+  </view>
+
+  <view class="motto-text">八卦洞察，天赋尽显</view>
+
+  <view class="image-grid">
+    <image src="../../images/talent/wuxing.png" mode="aspectFit" class="grid-image"/>
+    <image src="../../images/talent/bagua.png" mode="aspectFit" class="grid-image"/>
+    <image src="../../images/talent/baofo.png" mode="aspectFit" class="grid-image"/>
+  </view>
+
+  <view class="motto-text">八卦智慧，潜能解锁</view>
+
+  <image src="../../images/talent/yijing.png" mode="aspectFit" class="bottom-image"/>
+</view>

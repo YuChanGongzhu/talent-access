@@ -1,0 +1,117 @@
+/* pages/intoUs/intoUs.wxss */
+
+page {
+  height: 100vh;
+  background: #fff;
+}
+
+.container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+
+  .header-bg {
+    width: 100%;
+  }
+}
+
+/* 头部样式 */
+.header {
+  width: 100%;
+
+  .title {
+    display: block;
+    font-size: 36rpx;
+    text-align: center;
+    padding: 30rpx 0;
+    background: #fff;
+    font-weight: bold;
+  }
+}
+
+/* 服务流程样式 */
+.service-process {
+  padding: 60rpx 30rpx;
+  width: 100%;
+  box-sizing: border-box;
+  background: #F8F9FC;
+
+  .section-title {
+    font-size: 36rpx;
+    font-weight: bold;
+    margin-bottom: 60rpx;
+    text-align: left;
+    padding-left: 20rpx;
+  }
+
+  .process-steps {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 20rpx;
+
+    .step {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+      
+      .icon-wrapper {
+        width: 60rpx;
+        height: 60rpx;
+        background: #D2B5EB;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 20rpx;
+
+        .step-icon {
+          width: 30rpx;
+          height: 30rpx;
+        }
+      }
+
+      .step-text {
+        font-size: 28rpx;
+        color: #333;
+      }
+    }
+
+    .step-line {
+      flex: 1;
+      height: 4rpx;
+      background: #D2B5EB;
+      margin: 0;
+      margin-bottom: 40rpx;
+      max-width: 120rpx;
+      top: -30rpx
+    }
+  }
+}
+
+/* 团队介绍样式 */
+.team-section {
+  width: 100%;  
+  .section-title {
+    font-size: 36rpx;
+    font-weight: bold;
+    padding: 40rpx;
+    text-align: left;
+  }
+
+  .team-members {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    
+    .member-avatar {
+      width: 230rpx;
+      height: 400rpx;
+      object-fit: cover;
+      border-radius: 8rpx;
+    }
+  }
+}

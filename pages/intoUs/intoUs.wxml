@@ -1,0 +1,43 @@
+<navigation-bar title="走进我们" back="{{false}}" color="black" background="#FFF"></navigation-bar>
+<view>
+  <view class="container">
+    <image src="/images/intoUs/pic.png" class="header-bg"></image>
+
+    <!-- 服务流程 -->
+    <view class="service-process">
+      <view class="section-title">服务流程</view>
+      <view class="process-steps">
+        <view class="step">
+          <view class="icon-wrapper">
+            <image src="/images/intoUs/info.svg" class="step-icon"></image>
+          </view>
+          <text class="step-text">信息收集</text>
+        </view>
+        <view class="step-line"></view>
+        <view class="step">
+          <view class="icon-wrapper">
+            <image src="/images/intoUs/process.svg" class="step-icon"></image>
+          </view>
+          <text class="step-text">专业评估</text>
+        </view>
+        <view class="step-line"></view>
+        <view class="step">
+          <view class="icon-wrapper">
+            <image src="/images/intoUs/advice.svg" class="step-icon"></image>
+          </view>
+          <text class="step-text">专家建议</text>
+        </view>
+      </view>
+    </view>
+
+    <!-- 团队介绍 -->
+    <view class="team-section">
+      <view class="section-title">我们的团队</view>
+      <view class="team-members">
+        <image src="/images/intoUs/people1.png" mode="aspectFill" class="member-avatar"></image>
+        <image src="/images/intoUs/people2.png" mode="aspectFill" class="member-avatar"></image>
+        <image src="/images/intoUs/people3.png" mode="aspectFill" class="member-avatar"></image>
+      </view>
+    </view>
+</view>
+</view>

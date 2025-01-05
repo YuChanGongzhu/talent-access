@@ -1,0 +1,87 @@
+<!--index.wxml-->
+<navigation-bar title="天赋测评" back="{{false}}" color="black" background="#FFF"></navigation-bar>
+  <view class="container">
+
+    <view class="form-wrapper">
+      <view class="form-container">
+        <view class="input-item">
+          <input type="text" placeholder="请输入姓名" bindinput="onNameInput" value="{{name}}" />
+        </view>
+        
+        <view class="input-item">
+          <view class="date-picker" bindtap="showDatePicker">
+            <text class="{{birthdate ? '' : 'placeholder'}}">{{birthdate || '请选择您的阳历出生日期'}}</text>
+            <text class="arrow">></text>
+          </view>
+        </view>
+
+        <!-- 自定义日期选择器弹窗 -->
+        <view class="picker-popup {{showPicker ? 'show' : ''}}">
+          <view class="picker-content">
+            <view class="picker-header">
+              <text class="close" catchtap="onCloseClick">×</text>
+              <text class="title">出生日期</text>
+              <text class="confirm" catchtap="onConfirmClick">✓</text>
+            </view>
+            
+            <view class="picker-body">
+              <view class="picker-columns">
+                <view class="picker-column" data-column="year" bindtouchstart="onTouchStart" bindtouchmove="onTouchMove" bindtouchend="onTouchEnd">
+                  <view class="picker-column-content" style="transform: translateY({{yearOffset}}rpx)">
+                    <view wx:for="{{yearList}}" wx:key="index" class="picker-item {{currentYear === parseInt(item) ? 'active' : ''}}">{{item}}</view>
+                  </view>
+                </view>
+                
+                <view class="picker-column" data-column="month" bindtouchstart="onTouchStart" bindtouchmove="onTouchMove" bindtouchend="onTouchEnd">
+                  <view class="picker-column-content" style="transform: translateY({{monthOffset}}rpx)">
+                    <view wx:for="{{monthList}}" wx:key="index" class="picker-item {{currentMonth === index + 1 ? 'active' : ''}}">{{item}}</view>
+                  </view>
+                </view>
+                
+                <view class="picker-column" data-column="day" bindtouchstart="onTouchStart" bindtouchmove="onTouchMove" bindtouchend="onTouchEnd">
+                  <view class="picker-column-content" style="transform: translateY({{dayOffset}}rpx)">
+                    <view wx:for="{{dayList}}" wx:key="index" class="picker-item {{currentDay === index + 1 ? 'active' : ''}}">{{item}}</view>
+                  </view>
+                </view>
+                
+                <view class="picker-column" data-column="hour" bindtouchstart="onTouchStart" bindtouchmove="onTouchMove" bindtouchend="onTouchEnd">
+                  <view class="picker-column-content" style="transform: translateY({{hourOffset}}rpx)">
+                    <view wx:for="{{hourList}}" wx:key="index" class="picker-item {{currentHour === index ? 'active' : ''}}">{{item}}</view>
+                  </view>
+                </view>
+                
+                <view class="picker-column" data-column="minute" bindtouchstart="onTouchStart" bindtouchmove="onTouchMove" bindtouchend="onTouchEnd">
+                  <view class="picker-column-content" style="transform: translateY({{minuteOffset}}rpx)">
+                    <view wx:for="{{minuteList}}" wx:key="index" class="picker-item {{currentMinute === index ? 'active' : ''}}">{{item}}</view>
+                  </view>
+                </view>
+              </view>
+              
+              <view class="picker-mask">
+                <view class="picker-mask-top"></view>
+                <view class="picker-mask-middle"></view>
+                <view class="picker-mask-bottom"></view>
+              </view>
+            </view>
+          </view>
+        </view>
+        
+        <view class="input-item">
+          <picker bindchange="onGenderSelect" value="{{gender}}" range="{{['男', '女']}}">
+            <view class="picker {{gender ? '' : 'placeholder'}}">
+              {{gender || '选择您的性别'}}
+              <view class="arrow">></view>
+            </view>
+          </picker>
+        </view>
+        
+        <button class="start-btn {{canSubmit ? 'active' : ''}}" bindtap="startEvaluation">开始测评</button>
+      </view>
+    </view>
+
+    <view class="contact-btn">
+      <image src="/images/contact.png" mode="aspectFit"></image>
+      <button open-type="contact">联系我们</button>
+    </view>
+
+  </view>

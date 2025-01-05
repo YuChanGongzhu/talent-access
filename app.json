@@ -1,0 +1,51 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/about/about",
+    "pages/intoUs/intoUs",
+    "pages/story/story"
+  ],
+  "window": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "天赋测评",
+    "navigationBarBackgroundColor": "#ffffff",
+    "backgroundColor": "#ffffff",
+    "navigationStyle": "custom"
+  },
+  "tabBar": {
+    "color": "#999999",
+    "selectedColor": "#D2B5EB",
+    "backgroundColor": "#ffffff",
+    "borderStyle": "white",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "天赋测评",
+        "iconPath": "images/test.png",
+        "selectedIconPath": "images/test-active.png"
+      },
+      {
+        "pagePath": "pages/about/about",
+        "text": "认识天赋",
+        "iconPath": "images/about.png",
+        "selectedIconPath": "images/about-active.png"
+      },
+      {
+        "pagePath": "pages/intoUs/intoUs",
+        "text": "走进我们",
+        "iconPath": "images/join.png",
+        "selectedIconPath": "images/join-active.png"
+      },
+      {
+        "pagePath": "pages/story/story",
+        "text": "我的故事",
+        "iconPath": "images/story.png",
+        "selectedIconPath": "images/story-active.png"
+      }
+    ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json",
+  "lazyCodeLoading": "requiredComponents"
+}

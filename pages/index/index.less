@@ -1,0 +1,561 @@
+/**index.less**/
+page {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+}
+
+.container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+
+  .title {
+    font-size: 36rpx;
+    font-weight: 500;
+    margin: 40rpx 0;
+    color: #333;
+  }
+
+  .form-wrapper {
+    width: 100%;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 30rpx;
+  }
+
+  .form-container {
+    width: 100%;
+    max-width: 600rpx;
+
+    .input-item {
+      width: 100%;
+      margin-bottom: 30rpx;
+
+      input, .picker {
+        width: 100%;
+        height: 88rpx;
+        background: #f8f8f8;
+        border-radius: 8rpx;
+        padding: 0 30rpx;
+        font-size: 28rpx;
+        color: #333;
+      }
+
+      .picker {
+        width: 100%;
+        height: 88rpx;
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+        padding: 0 24rpx;
+        color: #333;
+        font-size: 32rpx;
+
+        &.placeholder {
+          color: #999;
+        }
+
+        &.selected {
+          color: #7B66FF;
+          font-weight: 500;
+          letter-spacing: 2rpx;
+        }
+
+        .arrow {
+          color: #999;
+          font-size: 28rpx;
+        }
+      }
+    }
+
+    .start-btn {
+      width: 100%;
+      height: 88rpx;
+      background: #e6d1f2;
+      border-radius: 44rpx;
+      color: #fff;
+      font-size: 32rpx;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 60rpx;
+
+      &.active {
+        background: #D2B5EB;
+      }
+    }
+  }
+
+  .contact-btn {
+    position: fixed;
+    right: 30rpx;
+    bottom: 140rpx;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 120rpx;
+    height: 120rpx;
+    border-radius: 50%;
+    background-color: rgba(210, 181, 235, 0.2);
+
+    image {
+      width: 48rpx;
+      height: 48rpx;
+      margin-bottom: 6rpx;
+    }
+
+    button {
+      background: transparent;
+      color: #D2B5EB;
+      font-size: 24rpx;
+      padding: 0;
+      line-height: 1;
+      border: none;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      
+      &::after {
+        display: none;
+      }
+    }
+  }
+}
+
+// Custom picker styles
+.picker-view {
+  background-color: white;
+  border-radius: 20rpx 20rpx 0 0;
+  overflow: hidden;
+}
+
+.picker-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20rpx 30rpx;
+  border-bottom: 1rpx solid #eee;
+
+  .close, .confirm {
+    width: 60rpx;
+    height: 60rpx;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 40rpx;
+    color: #666;
+  }
+
+  .close {
+    font-family: "Arial";
+    font-weight: bold;
+  }
+
+  .confirm {
+    color: #8a2be2;  // 使用淡紫色
+  }
+
+  .title {
+    font-size: 32rpx;
+    color: #333;
+  }
+}
+
+.picker-content {
+  position: relative;
+  
+  .selected-row {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 88rpx;
+    transform: translateY(-50%);
+    background-color: rgba(138, 43, 226, 0.1);  // 淡紫色背景，透明度0.1
+    pointer-events: none;
+  }
+
+  picker-view {
+    width: 100%;
+    height: 400rpx;
+  }
+
+  .selected-indicator {
+    height: 88rpx;
+    border-top: 1rpx solid rgba(138, 43, 226, 0.2);  // 淡紫色边框，透明度0.2
+    border-bottom: 1rpx solid rgba(138, 43, 226, 0.2);
+  }
+
+  picker-view-column {
+    view {
+      height: 88rpx;
+      line-height: 88rpx;
+      text-align: center;
+      color: #666;
+      font-size: 32rpx;
+      
+      &.active {
+        color: #8a2be2;  // 选中项使用淡紫色
+        font-weight: 500;
+      }
+    }
+
+    .view-picker-item {
+      text-align: center; /* 确保文本对齐 */
+      line-height: 45px; /* 应与 picker 高度一致 */
+      /* 其他可能影响对齐的样式 */
+    }
+    
+    .view-picker-active {
+      background-color: rgba(128, 0, 255, 0.2); /* 确保选中高亮 */
+      /* 保持与 view-picker-item 的 margin/padding/line-height 一致 */
+    }
+  }
+}
+
+.wx-picker-view {
+  width: 100%;
+  height: 480rpx;
+}
+
+.wx-picker__mask {
+  background-image: linear-gradient(180deg, 
+    rgba(255, 255, 255, 0.95) 0%, 
+    rgba(255, 255, 255, 0.6) 45%, 
+    rgba(255, 255, 255, 0) 50%, 
+    rgba(255, 255, 255, 0.6) 55%, 
+    rgba(255, 255, 255, 0.95) 100%
+  );
+}
+
+.wx-picker__indicator {
+  height: 88rpx;
+}
+
+.wx-picker-view-column view {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 8rpx;
+  
+  &.active {
+    font-weight: 500;
+    color: #333;
+  }
+
+  &:not(.active) {
+    color: #999;
+  }
+}
+
+// Custom date picker styles
+.date-picker {
+  width: 100%;
+  height: 88rpx;
+  background: #f8f8f8;
+  border-radius: 8rpx;
+  padding: 0 30rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  
+  .placeholder {
+    color: #999;
+  }
+  
+  .arrow {
+    color: #999;
+  }
+}
+
+.picker-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 999;
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  
+  &.show {
+    visibility: visible;
+    opacity: 1;
+  }
+  
+  .picker-content {
+    position: relative;
+    width: 100%;
+    background: white;
+    border-radius: 24rpx 24rpx 0 0;
+    overflow: hidden;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+  }
+  
+  &.show .picker-content {
+    transform: translateY(0);
+  }
+}
+
+.picker-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 32rpx;
+  
+  .close, .confirm {
+    font-size: 32rpx;
+    color: #666;
+  }
+  
+  .title {
+    font-size: 32rpx;
+    color: #333;
+    font-weight: 500;
+  }
+  
+  .confirm {
+    color: #8a2be2;
+  }
+}
+
+.picker-body {
+  padding: 32rpx 0;
+  position: relative;
+  height: 440rpx;
+  
+  .picker-columns {
+    height: 100%;
+    display: flex;
+    position: relative;
+    z-index: 1;
+    padding: 0 32rpx;
+    justify-content: space-between;
+    
+    .picker-column {
+      height: 100%;
+      overflow: hidden;
+      position: relative;
+      width: 140rpx; // 约 70px
+      
+      &:nth-child(1) { // 年
+        width: 160rpx; // 稍微宽一点以容纳4位数字
+      }
+      
+      .picker-column-content {
+        position: absolute;
+        width: 100%;
+        text-align: center;
+        top: 176rpx;
+        transition: transform 0.3s ease-out;
+        
+        .picker-item {
+          height: 88rpx;
+          line-height: 88rpx;
+          color: #999;
+          font-size: 32rpx;
+          white-space: nowrap;
+          
+          &.active {
+            color: #8a2be2;
+            font-size: 36rpx;
+          }
+        }
+      }
+    }
+  }
+  
+  .picker-mask {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 2;
+    pointer-events: none;
+    
+    .picker-mask-top, .picker-mask-bottom {
+      position: absolute;
+      left: 0;
+      right: 0;
+      height: 176rpx;
+      background: linear-gradient(180deg, rgba(255,255,255,0.9), rgba(255,255,255,0.4));
+    }
+    
+    .picker-mask-top {
+      top: 0;
+      transform: rotate(180deg);
+    }
+    
+    .picker-mask-bottom {
+      bottom: 0;
+    }
+    
+    .picker-mask-middle {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 50%;
+      height: 88rpx;
+      transform: translateY(-50%);
+      background: rgba(138, 43, 226, 0.1);
+      border-top: 1rpx solid rgba(138, 43, 226, 0.2);
+      border-bottom: 1rpx solid rgba(138, 43, 226, 0.2);
+    }
+  }
+}
+
+.picker-row {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 88rpx;
+  color: #999;
+  font-size: 32rpx;
+  
+  text {
+    flex: 1;
+    text-align: center;
+  }
+  
+  &.current {
+    color: #8a2be2;
+    font-size: 36rpx;
+  }
+}
+
+.custom-picker-mask {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.custom-picker {
+  width: 100%;
+  background: white;
+  border-radius: 24rpx;
+  overflow: hidden;
+  
+  .picker-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30rpx;
+    border-bottom: 1rpx solid #eee;
+    
+    .close, .confirm {
+      font-size: 40rpx;
+      color: #666;
+      width: 60rpx;
+      height: 60rpx;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .title {
+      font-size: 32rpx;
+      color: #333;
+    }
+    
+    .confirm {
+      color: #8a2be2;
+    }
+  }
+  
+  .picker-content {
+    position: relative;
+    height: 440rpx;
+    display: flex;
+    
+    .picker-column {
+      flex: 1;
+      position: relative;
+      height: 100%;
+      overflow: hidden;
+      
+      .picker-column-window {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+      }
+      
+      .picker-item {
+        height: 88rpx;
+        line-height: 88rpx;
+        text-align: center;
+        font-size: 32rpx;
+        color: #999;
+        transition: transform 0.3s ease-out;
+        
+        &.active {
+          color: #8a2be2;
+          font-size: 36rpx;
+        }
+      }
+    }
+    
+    .picker-mask {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      pointer-events: none;
+      
+      .picker-mask-top, .picker-mask-bottom {
+        position: absolute;
+        left: 0;
+        right: 0;
+        height: 176rpx;
+        background: linear-gradient(180deg, rgba(255,255,255,0.9), rgba(255,255,255,0.4));
+      }
+      
+      .picker-mask-top {
+        top: 0;
+        transform: rotate(180deg);
+      }
+      
+      .picker-mask-bottom {
+        bottom: 0;
+      }
+      
+      .picker-mask-middle {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 50%;
+        height: 88rpx;
+        transform: translateY(-50%);
+        background: rgba(138, 43, 226, 0.1);
+        border-top: 1rpx solid rgba(138, 43, 226, 0.2);
+        border-bottom: 1rpx solid rgba(138, 43, 226, 0.2);
+      }
+    }
+  }
+}

@@ -1,0 +1,29 @@
+<!--pages/story/story.wxml-->
+<view class="custom-nav">
+  <view class="nav-title">我们的故事</view>
+</view>
+<view class="story-container">
+  <scroll-view class="counselor-list" scroll-x enable-flex enhanced show-scrollbar="{{false}}" bindscroll="onScroll">
+    <view class="scroll-content">
+      <view wx:for="{{counselorList}}" wx:key="id" class="counselor-item {{currentIndex === index ? 'active' : ''}}" data-index="{{index}}">
+        <image src="{{item.image}}" mode="aspectFill"></image>
+        <view class="counselor-tag">{{item.tag}}</view>
+        <view class="counselor-name">{{item.name}}</view>
+        <view class="counselor-title">{{item.title}}</view>
+      </view>
+    </view>
+  </scroll-view>
+
+  <view class="counselor-intro {{showIntro ? 'show' : ''}}">
+    <view class="intro-title">咨询师介绍</view>
+    <view class="intro-item">
+      <view class="intro-label">姓名：</view>
+      <view class="intro-content">{{currentCounselor.name}}</view>
+    </view>
+    <view class="intro-item">
+      <view class="intro-label">专业领域：</view>
+      <view class="intro-content">{{currentCounselor.field}}</view>
+    </view>
+    <view class="intro-text">{{currentCounselor.description}}</view>
+  </view>
+</view>
